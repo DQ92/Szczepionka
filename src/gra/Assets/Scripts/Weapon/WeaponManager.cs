@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 
 public class WeaponManager : MonoBehaviour {
-	public int currentWeapon = 1;
+	public int currentWeapon = 0;
 	public int maxWeapon = 0;
-
+	
 	// Use this for initialization
 	void Start () {
 
@@ -42,6 +42,9 @@ public class WeaponManager : MonoBehaviour {
 		weapon.transform.parent = transform;
 		weapon.transform.localEulerAngles = rotation;
 		weapon.SetActive(false);
-		maxWeapon++;
+
+		maxWeapon = transform.childCount-1;
+		if(maxWeapon == 0)
+			SelectWeapon (0);
 	}
 }
