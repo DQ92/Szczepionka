@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class AmmoItem : MonoBehaviour {
+	public string itemName;
 	public AudioClip pickUpSound;
 	public int ammo = 32;
 	public string weaponPath;
@@ -27,7 +28,7 @@ public class AmmoItem : MonoBehaviour {
 		if (triggered)
 		{
 			if(weapon)
-				GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać");
+				GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać "+itemName);
 			else
 				GUI.Label(new Rect(300,300,500,200), "Nie masz tej broni");
 		}
