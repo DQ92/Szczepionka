@@ -48,9 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DestroyMeTime.cs" />
      <Compile Include="Assets\Scripts\Enemy\ZombieLogic.cs" />
+     <Compile Include="Assets\Scripts\HUD\Gun.cs" />
+     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Item\AmmoItem.cs" />
      <Compile Include="Assets\Scripts\Item\WeaponItem.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerLogic.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Tasks\Task.cs" />
      <Compile Include="Assets\Scripts\Tasks\TaskFindWeaponCompleted.cs" />
      <Compile Include="Assets\Scripts\Tasks\TaskManager.cs" />
