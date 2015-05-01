@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerLogic : MonoBehaviour {
+public class Player : MonoBehaviour {
 	public int health = 100;
+	public int maxHealth = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,10 @@ public class PlayerLogic : MonoBehaviour {
 	
 	}
 
-	void ApplayDamage(int damage){
+	public void ApplayDamage(int damage){
+
 		health -= damage;
+		if(health<0)
+			health = 0;
 	}
 }

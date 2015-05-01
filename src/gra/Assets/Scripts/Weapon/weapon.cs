@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Weapon : MonoBehaviour {
 
+	public Texture icon;
 	public Transform Effect;
 	public int TheDammage = 100;
 	
@@ -27,6 +29,7 @@ public class Weapon : MonoBehaviour {
 	protected bool drawWeapon = false;
 	protected bool reloading = false;
 	protected GameObject mainCamera;
+	protected int numberOfMagazines;
 
 	// Use this for initialization
 	protected virtual void Start () {
@@ -59,16 +62,20 @@ public class Weapon : MonoBehaviour {
 		if (v <= magazineSize) {
 			inMagazine = v;
 			ammo = 0;
-			return;
+
+		}else{
+			inMagazine = magazineSize;
+			ammo = v - inMagazine;
+			
+			if (ammo > maxAmmo)
+				ammo = maxAmmo;
 		}
-		
-		inMagazine = magazineSize;
-		
-		ammo = v - inMagazine;
-		
-		if (ammo > maxAmmo)
-			ammo = maxAmmo;
-		
+			numberOfMagazines = (int)Math.Ceiling((float)ammo/magazineSize);
+	}
+
+	public int getNumberOfMagazines()
+	{
+		return numberOfMagazines;
 	}
 
 	public virtual IEnumerator Fire ()
