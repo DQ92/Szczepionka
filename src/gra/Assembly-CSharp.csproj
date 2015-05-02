@@ -39,17 +39,24 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DestroyMeTime.cs" />
      <Compile Include="Assets\Scripts\Enemy\ZombieLogic.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Equipment\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Equipment\Item.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ItemDatabase.cs" />
+     <Compile Include="Assets\Scripts\Equipment\test.cs" />
+=======
      <Compile Include="Assets\Scripts\HUD\Gun.cs" />
      <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
+>>>>>>> 61a9ec4407871c815bded760bdffaa1b5cd5bc74
      <Compile Include="Assets\Scripts\Item\AmmoItem.cs" />
      <Compile Include="Assets\Scripts\Item\WeaponItem.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
