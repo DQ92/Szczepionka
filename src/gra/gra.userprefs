@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Equipment\Item.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Equipment\Inventory.cs">
     <Files>
-      <File FileName="Assets\Scripts\Equipment\Item.cs" Line="6" Column="19" />
-      <File FileName="Assets\Scripts\Equipment\ItemDatabase.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\Equipment\Item.cs" Line="29" Column="2" />
+      <File FileName="Assets\Scripts\Equipment\ItemDatabase.cs" Line="11" Column="30" />
+      <File FileName="Assets\Scripts\Equipment\Inventory.cs" Line="26" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

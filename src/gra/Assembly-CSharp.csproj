@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Equipment\Inventory.cs" />
      <Compile Include="Assets\Scripts\Equipment\Item.cs" />
      <Compile Include="Assets\Scripts\Equipment\ItemDatabase.cs" />
+     <Compile Include="Assets\Scripts\Equipment\test.cs" />
      <Compile Include="Assets\Scripts\Item\AmmoItem.cs" />
      <Compile Include="Assets\Scripts\Item\WeaponItem.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerLogic.cs" />

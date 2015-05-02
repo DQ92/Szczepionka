@@ -17,7 +17,14 @@ public class Item  {
 		Ammo
 	}
 
-	public Item(string name, int ID, string description){
+	public Item(string name, int ID, string description, ItemType type){
+		itemName = name;
+		itemID = ID;
+		itemIcon = Resources.Load<Texture2D> ("Item Icons/"+ name);
+		itemDescription = description;
+		itemType = type;
+	}
+	public Item(){
 
 	}
 
