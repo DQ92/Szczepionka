@@ -94,6 +94,9 @@ public class TaskManager: MonoBehaviour {
 		if(taskIndex < 0 || taskIndex >=tasks.Count)
 			return;
 
+		if(!messageText)
+			return;
+
 		Task t = tasks[taskIndex];
 		messageText.text = t.getDescription();
 

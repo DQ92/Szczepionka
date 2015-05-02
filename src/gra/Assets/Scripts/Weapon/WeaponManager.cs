@@ -4,7 +4,22 @@ using System.Collections.Generic;
 public class WeaponManager : MonoBehaviour {
 	public int currentWeapon = 0;
 	public int maxWeapon = 0;
-	
+
+	Weapon selectedWeapon;
+
+	public bool weaponisActivated()
+	{
+		if(!selectedWeapon)
+			return false;
+		return selectedWeapon.gameObject.activeSelf;
+	}
+
+	public Weapon getSelectedWeapon(){
+		if(weaponisActivated())
+			return selectedWeapon;
+		return null;
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -29,8 +44,10 @@ public class WeaponManager : MonoBehaviour {
 	{	
 		for(int i=0; i<transform.childCount; i++)
 		{
-			if(i==index)
+			if(i==index){
 				transform.GetChild(i).gameObject.SetActive(true);
+				selectedWeapon = transform.GetChild(i).GetComponent<Weapon>();
+			}
 			else
 				transform.GetChild(i).gameObject.SetActive(false);
 		}
