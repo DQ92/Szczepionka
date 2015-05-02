@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class Player : MonoBehaviour {
 	public int health = 100;
 	public int maxHealth = 100;

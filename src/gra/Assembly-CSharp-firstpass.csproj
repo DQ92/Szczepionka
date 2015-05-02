@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
      <None Include="Assets\FPS Kit By (HDGameP)\My Kit\M4A1\Shaders\BumpedSpecular2.shader" />
      <None Include="Assets\FPS Kit By (HDGameP)\My Kit\Colt m9\Shaders\BackfaceBumpedDiffuse.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />

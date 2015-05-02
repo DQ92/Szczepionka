@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class WeaponSettings : MonoBehaviour {
 	public int ammo = 20;
 	public int maxAmmo = 128;

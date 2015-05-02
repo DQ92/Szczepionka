@@ -49,6 +49,12 @@
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" />
+     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\SmoothLookAt.js" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\DragRigidbody.js" />
      <None Include="Assets\FPS Kit By (HDGameP)\My Kit\M4A1\Shaders\BumpedSpecular2.shader" />
      <None Include="Assets\FPS Kit By (HDGameP)\My Kit\Colt m9\Shaders\BackfaceBumpedDiffuse.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
