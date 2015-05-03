@@ -10,7 +10,7 @@ public class test : MonoBehaviour {
 	void OnTriggerEnter( Collider other) {
 		if (other.gameObject.tag == "Player") {
 
-			inventory.AddItem(new Item("1",0,"loremi",Item.ItemType.Weapon));
+			inventory.AddItem(new Item("1",0,"loremi",Item.ItemType.Weapon,5));
 		}
 	}
 	// Update is called once per frame

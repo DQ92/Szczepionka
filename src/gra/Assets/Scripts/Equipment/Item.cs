@@ -5,7 +5,7 @@ using System.Collections;
 [System.Serializable]
 public class Item  {
 	public string itemName;
-	public int itemID;
+	public int itemPower;
 	public string itemDescription;
 	public Texture2D itemIcon;
 
@@ -14,18 +14,27 @@ public class Item  {
 	public enum ItemType {
 		Weapon,
 		VaccinePart,
-		Ammo
+		Ammo,
+		Medic
 	}
 
-	public Item(string name, int ID, string description, ItemType type){
+	public Item(string name, int ID, string description, ItemType type,int power){
 		itemName = name;
-		itemID = ID;
+		itemPower = power;
 		itemIcon = Resources.Load<Texture2D> ("Item Icons/"+ name);
 		itemDescription = description;
 		itemType = type;
 	}
 	public Item(){
 
+	}
+
+	public int use(){
+		if (itemType == ItemType.Medic) {
+
+			return-1;
+		}
+		return 0;
 	}
 
 }
