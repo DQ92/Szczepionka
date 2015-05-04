@@ -11,7 +11,7 @@ public class ColtM9 : Weapon {
 	
 	protected override void Update ()
 	{
-		if (ammo == 0 && inMagazine==0)
+		if (ammo == 0 && inMagazine==0 || !weaponManager.weaponIsActivated)
 			return;
 
 		if(Input.GetButtonDown ("Fire1") && reloading == false && drawWeapon == false)

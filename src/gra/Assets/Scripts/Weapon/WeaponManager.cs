@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class WeaponManager : MonoBehaviour {
 	public int currentWeapon = 0;
 	public int maxWeapon = 0;
+	public bool weaponIsActivated;
 
 	Weapon selectedWeapon;
 
@@ -29,6 +30,9 @@ public class WeaponManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(!weaponIsActivated)
+			return;
+
 		if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
 			if (++currentWeapon > maxWeapon)
 				currentWeapon = 0;
