@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class m4a1 : Weapon {
 	public AudioClip slidebackSound;
 	public float shotDelay = 0.5f;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class WeaponManager : MonoBehaviour {
 	public int currentWeapon = 0;
 	public int maxWeapon = 0;
