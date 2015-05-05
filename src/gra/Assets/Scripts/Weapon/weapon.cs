@@ -31,6 +31,7 @@ public class Weapon : MonoBehaviour {
 	protected bool reloading = false;
 	protected GameObject mainCamera;
 	protected int numberOfMagazines;
+	protected WeaponManager weaponManager;
 
 	// Use this for initialization
 	protected virtual void Start () {
@@ -38,6 +39,8 @@ public class Weapon : MonoBehaviour {
 		transform.localPosition = hipPose;
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 		addAmmo (ammo);
+
+		weaponManager = gameObject.GetComponentInParent<WeaponManager>();
 	}
 	
 	// Update is called once per frame

@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
 
 	public Animator camerAnimator;
 
+	public LockUnlock lockUnlock;
+
 	float bloodScreenTime;
 	bool isDead;
 
@@ -61,6 +63,9 @@ public class Player : MonoBehaviour {
 	void Die()
 	{
 		isDead = true;
+		lockUnlock.movementLock();
+		lockUnlock.mouseLookLock();
+		lockUnlock.weaponLock();
 		camerAnimator.enabled = true;
 	}
 

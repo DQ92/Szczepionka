@@ -15,7 +15,7 @@ public class m4a1 : Weapon {
 
 	protected override void Update ()
 	{
-		if (ammo == 0 && inMagazine==0)
+		if (ammo == 0 && inMagazine==0 || !weaponManager.weaponIsActivated)
 			return;
 		if(canShoot && Input.GetButton ("Fire1") && reloading == false && drawWeapon == false)
 		{
