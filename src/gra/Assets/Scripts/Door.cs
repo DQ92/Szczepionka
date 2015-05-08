@@ -26,7 +26,10 @@ public class Door : MonoBehaviour {
 	{
 		if (triggered)
 		{
-			GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby otworzyć ");
+			if(!isOpen)
+				GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby otworzyć ");
+			else
+				GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zamknąć ");
 		}
 	}
 
