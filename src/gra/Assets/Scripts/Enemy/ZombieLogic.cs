@@ -61,18 +61,19 @@ public class ZombieLogic : MonoBehaviour {
 		updatePosition ();
 	}
 
-	void ApplayDamage(int damage)
+	/*void ApplayDamage(int damage)
 	{
 		if (health <= 0)
 			return;
 
 		health -= damage;
-	}
+	}*/
 
 	void Dead()
 	{
 		anim.SetBool ("dead", true);
 		character.enabled = false;
+		character.detectCollisions = false;
 		isDead = true;
 	}
 

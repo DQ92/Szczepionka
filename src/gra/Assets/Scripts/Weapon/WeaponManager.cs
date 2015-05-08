@@ -7,7 +7,7 @@ public class WeaponManager : MonoBehaviour {
 	public int maxWeapon = 0;
 	public bool weaponIsActivated;
 
-	Weapon selectedWeapon;
+	gun selectedWeapon;
 
 	public bool weaponisActivated()
 	{
@@ -16,7 +16,7 @@ public class WeaponManager : MonoBehaviour {
 		return selectedWeapon.gameObject.activeSelf;
 	}
 
-	public Weapon getSelectedWeapon(){
+	public gun getSelectedWeapon(){
 		if(weaponisActivated())
 			return selectedWeapon;
 		return null;
@@ -51,7 +51,7 @@ public class WeaponManager : MonoBehaviour {
 		{
 			if(i==index){
 				transform.GetChild(i).gameObject.SetActive(true);
-				selectedWeapon = transform.GetChild(i).GetComponent<Weapon>();
+				selectedWeapon = transform.GetChild(i).GetComponent<gun>();
 			}
 			else
 				transform.GetChild(i).gameObject.SetActive(false);

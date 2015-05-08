@@ -53,7 +53,7 @@ public class AmmoItem : MonoBehaviour {
 		//weapon.SendMessage ("addAmmo", ammo, SendMessageOptions.DontRequireReceiver);
 		audio.PlayOneShot(pickUpSound);
 		renderer.enabled = false;
-		ColtM9 colt = weapon.gameObject.GetComponent<ColtM9>();
+		gun colt = weapon.gameObject.GetComponent<gun>();
 		colt.addAmmo (ammo);
 		triggered = false;
 		Destroy(gameObject, pickUpSound.length);
