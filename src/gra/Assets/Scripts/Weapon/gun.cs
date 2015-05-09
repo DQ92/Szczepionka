@@ -7,6 +7,9 @@ public class gun : MonoBehaviour {
 	public Texture icon;
 	public Transform Effect;
 	public Transform blood;
+	public Transform muzzle;
+	public Transform muzzlePosition;
+
 	public int TheDammage = 100;
 	
 	public string drawAnim = "draw";
@@ -111,10 +114,16 @@ public class gun : MonoBehaviour {
 		canShoot = false;
 		animationGO.animation.CrossFadeQueued(fireLeftAnim, 0.08f, QueueMode.PlayNow);
 		audio.PlayOneShot(shot);
-		
+
+		//Vector3 middleScreen = new Vector3(Screen.width*0.5f, Screen.height*0.5f, 0);
+
+
+
 		RaycastHit hit;
 		Ray ray  = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f, Screen.height*0.5f, 0));
-		
+
+		Instantiate(muzzle, muzzlePosition.position, Quaternion.LookRotation(ray.direction.normalized));
+
 		if (Physics.Raycast (ray, out hit, 100,layerMask))
 		{
 			if(hit.transform.tag == "Enemy")
