@@ -14,8 +14,15 @@ public class Player : MonoBehaviour {
 
 	public LockUnlock lockUnlock;
 
+	[Header("Falling Damege:")]
+
+	public float damegeHeight = 2;
+	public float damageFactor = 6;
+
 	float bloodScreenTime;
 	bool isDead;
+	bool falling;
+	Vector3 startFallingPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +46,12 @@ public class Player : MonoBehaviour {
 					bloodScreen.color = t;
 			}
 		}
+
+		if(isDead)
+		{
+			if(Input.GetButtonDown ("Fire1"))
+			   Application.LoadLevel(Application.loadedLevel);
+		}
 	}
 
 	public void ApplayDamage(int damage){
@@ -60,6 +73,14 @@ public class Player : MonoBehaviour {
 
 	}
 
+	void OnGUI()
+	{
+		if(!isDead)
+			return;
+
+		GUI.Label(new Rect(300,300,500,200), "Kliknij aby spróbować jeszcze raz");
+	}
+
 	void Die()
 	{
 		isDead = true;
@@ -73,4 +94,29 @@ public class Player : MonoBehaviour {
 	{
 		return isDead;
 	}
+
+	void OnFall()
+	{
+		falling = true;
+		startFallingPosition = transform.position;
+	}
+
+	void OnJump()
+	{
+		falling = true;
+		startFallingPosition = transform.position;
+	}
+
+	void OnLand()
+	{
+		if(!falling)
+			return;
+
+		float height = startFallingPosition.y-transform.position.y;
+		if( height > damegeHeight)
+			ApplayDamage((int)(height*damageFactor));
+		falling = false;
+	}
+
+
 }
