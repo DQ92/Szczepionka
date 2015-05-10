@@ -19,6 +19,6 @@ public class TaskFindWeaponCompleted : MonoBehaviour {
 			"\n" +
 			"Ruszaj w drogę!";
 
-		manager.addTask("goToTheCity",message);
+		manager.addTask("endOfMission",message);
 	}
 }
