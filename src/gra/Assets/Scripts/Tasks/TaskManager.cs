@@ -109,9 +109,24 @@ public class TaskManager: MonoBehaviour {
 
 	public void markAsCompleted(string taskName)
 	{
+		int i=0;
 		foreach(Task s in tasks){
-			if(s.getName() == taskName)
+			if(s.getName() == taskName){
 				s.markAsCompleted();
+				selectTask(i);
+				return;
+			}
+			i++;
 		}
+	}
+
+	public List<Task> uncompletedTasks()
+	{
+		List<Task> uncompleted = new List<Task>();
+		foreach(Task s in tasks){
+			if(!s.isCompleted())
+				uncompleted.Add(s);
+		}
+		return uncompleted;
 	}
 }

@@ -42,17 +42,23 @@ public class gun : MonoBehaviour {
 	protected bool canShoot = true;
 
 	// Use this for initialization
-	protected virtual void Start () {
+	protected void Start () {
+
 		DrawWeapon();
 		transform.localPosition = hipPose;
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 		addAmmo (ammo);
-		
 		weaponManager = gameObject.GetComponentInParent<WeaponManager>();
+	}
+
+	void OnEnable()
+	{
+		if(reloading)
+			StartCoroutine(Reloading());
 	}
 	
 	// Update is called once per frame
-	protected virtual void Update () 
+	protected void Update () 
 	{
 		if (ammo == 0 && inMagazine==0 || !weaponManager.weaponIsActivated)
 			return;
@@ -150,7 +156,7 @@ public class gun : MonoBehaviour {
 		if(drawWeapon)
 			yield return new WaitForSeconds(0.0f);
 		
-		animationGO.animation.Play(drawAnim);
+		//animationGO.animation.Play(drawAnim);
 		drawWeapon = true;
 		yield return new WaitForSeconds(0.6f);
 		drawWeapon = false;

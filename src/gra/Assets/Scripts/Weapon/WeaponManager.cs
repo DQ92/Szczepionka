@@ -5,14 +5,16 @@ using System.Collections.Generic;
 public class WeaponManager : MonoBehaviour {
 	public int currentWeapon = 0;
 	public int maxWeapon = 0;
+
 	public bool weaponIsActivated;
 
 	gun selectedWeapon;
 
 	public bool weaponisActivated()
 	{
-		if(!selectedWeapon)
+		if(!selectedWeapon || !gameObject.activeSelf)
 			return false;
+
 		return selectedWeapon.gameObject.activeSelf;
 	}
 
