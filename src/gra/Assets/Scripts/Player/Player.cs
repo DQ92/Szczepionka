@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public int maxHealth = 100;
 
 	public GUITexture bloodScreen;
+	public GUISkin skin;
 
 	public float bloodScreenSpeed;
 
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour {
 
 	float bloodScreenTime;
 	bool isDead;
+	bool showMenu;
 	bool falling;
 	Vector3 startFallingPosition;
 
@@ -29,9 +31,32 @@ public class Player : MonoBehaviour {
 		bloodScreenTime = Time.time;
 		isDead = false;
 	}
-	
+
+	public void onLadder()
+	{
+		falling = false;
+	}
+
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			showMenu = !showMenu;
+			if(showMenu)
+			{
+				lockUnlock.mouseLookLock();
+				lockUnlock.weaponLock();
+			}
+			else
+			{
+				lockUnlock.mouseLookUnlock();
+				lockUnlock.weaponUnlock();
+			}
+
+		}
+
 		if(bloodScreen.gameObject.activeSelf)
 		{
 			if (Time.time >= bloodScreenTime && !isDead) {
@@ -46,12 +71,7 @@ public class Player : MonoBehaviour {
 					bloodScreen.color = t;
 			}
 		}
-
-		if(isDead)
-		{
-			if(Input.GetButtonDown ("Fire1"))
-			   Application.LoadLevel(Application.loadedLevel);
-		}
+		
 	}
 
 	public void ApplayDamage(int damage){
@@ -75,15 +95,30 @@ public class Player : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if(!isDead)
+		if(!showMenu && !isDead)
 			return;
+		GUI.skin = skin;
 
-		GUI.Label(new Rect(300,300,500,200), "Kliknij aby spróbować jeszcze raz");
+		float x = (Screen.width/2) - 100;
+		float y = (Screen.height/2) - 15;
+
+		if (GUI.Button(new Rect(x, y-20, 200, 30),"RESTART"))
+		{
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
+		if (GUI.Button(new Rect(x, y+20, 200, 30),"MENU"))
+		{
+			Application.LoadLevel("MainMenu");
+		}
+
+		//GUI.Label(new Rect(300,300,500,200), "Kliknij aby spróbować jeszcze raz");
 	}
 
 	void Die()
 	{
 		isDead = true;
+		showMenu = true;
 		lockUnlock.movementLock();
 		lockUnlock.mouseLookLock();
 		lockUnlock.weaponLock();

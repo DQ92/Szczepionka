@@ -15,6 +15,8 @@ public class Ladder : MonoBehaviour {
 			triggered = true;
 			//gravity = motor.gravity;
 			motor.enabled = false;
+			Player p = other.gameObject.GetComponent<Player>();
+			p.onLadder();
 		}
 	}
 	
