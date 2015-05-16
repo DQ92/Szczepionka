@@ -5,6 +5,7 @@ public class Enemy2 : MonoBehaviour {
 	public int health = 100;
 	public Transform [] waypoints;// między punktami nie może być przeszkód
 	public Transform target;
+
 	[Header("Sounds:")]
 	public AudioClip shot;
 	public AudioClip explode;
@@ -22,6 +23,7 @@ public class Enemy2 : MonoBehaviour {
 	public float attackSpeed;
 	public float damage;
 	public float shotDelay;
+	public Transform eyePosition;
 
 	enum State {watch,attack};
 	State state;
@@ -71,12 +73,15 @@ public class Enemy2 : MonoBehaviour {
 		
 		//if(attackRange <= distance)
 		RaycastHit hit;
-		Vector3 dir = (targetPoint - rWeapon.transform.position).normalized;
-		Debug.DrawRay(rWeapon.transform.position,dir*attackRange);
-		if (Physics.Raycast (rWeapon.transform.position, dir, out hit, attackRange))
+		Vector3 dir = (targetPoint - eyePosition.transform.position).normalized;
+		Debug.DrawRay(eyePosition.transform.position,dir*attackRange);
+
+		if (Physics.Raycast (eyePosition.transform.position, dir, out hit, attackRange))
 		{
-			if(hit.transform.tag == "Player")
+			if(hit.transform.tag == "Player"){
+				startPoint = transform.position;
 				return state = State.attack;
+			}
 		}
 
 		state = State.watch;
@@ -125,6 +130,7 @@ public class Enemy2 : MonoBehaviour {
 
 		if(Vector3.Distance(transform.position,endPoint) > 0.01F)
 			transform.position = Vector3.Lerp(startPoint, endPoint, (Time.time - startTime) / duration);
+
 		if(canShoot)
 			StartCoroutine(fire());
 	}
@@ -143,7 +149,7 @@ public class Enemy2 : MonoBehaviour {
 
 	Vector3 chooseTarget()
 	{
-		return waypoints[Random.Range(0,waypoints.Length-1)].position;
+		return waypoints[Random.Range(0,waypoints.Length)].position;
 	}
 
 	void ApplayDamage(int damage)
