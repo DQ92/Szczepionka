@@ -3,7 +3,7 @@ using System.Collections;
 
 
 [System.Serializable]
-public class Item  : MonoBehaviour{
+public class Item  {
 	public string itemName;
 	public int itemPower;
 	public string itemDescription;
