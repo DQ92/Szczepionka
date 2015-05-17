@@ -11,6 +11,7 @@ public class Item  : MonoBehaviour{
 
 	public ItemType itemType;
 
+	private WeaponManager weaponManager;
 
 
 	public enum ItemType {
@@ -18,17 +19,16 @@ public class Item  : MonoBehaviour{
 		VaccinePart,
 		M9Ammo,
 		M4Ammo,
-		Ammo,
 		Medic
 	}
 
-	public Item(string name, int ID, string description, ItemType type,int power){
+	public Item(string name, int ID, string description, ItemType type,int power,WeaponManager weaponManager){
 		itemName = name;
 		itemPower = power;
 		itemIcon = Resources.Load<Texture2D> ("Item Icons/"+ name);
 		itemDescription = description;
 		itemType = type;
-
+		this.weaponManager = weaponManager;
 	}
 	public Item(){
 
