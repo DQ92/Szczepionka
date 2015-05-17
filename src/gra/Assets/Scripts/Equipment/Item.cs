@@ -3,7 +3,7 @@ using System.Collections;
 
 
 [System.Serializable]
-public class Item  {
+public class Item  : MonoBehaviour{
 	public string itemName;
 	public int itemPower;
 	public string itemDescription;
@@ -11,9 +11,13 @@ public class Item  {
 
 	public ItemType itemType;
 
+
+
 	public enum ItemType {
 		Weapon,
 		VaccinePart,
+		M9Ammo,
+		M4Ammo,
 		Ammo,
 		Medic
 	}
@@ -24,6 +28,7 @@ public class Item  {
 		itemIcon = Resources.Load<Texture2D> ("Item Icons/"+ name);
 		itemDescription = description;
 		itemType = type;
+
 	}
 	public Item(){
 
@@ -32,9 +37,10 @@ public class Item  {
 	public int use(){
 		if (itemType == ItemType.Medic) {
 
-			return-1;
+			return 1;
 		}
 		return 0;
 	}
+
 
 }
