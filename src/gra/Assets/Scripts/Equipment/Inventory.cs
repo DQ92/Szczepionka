@@ -49,7 +49,14 @@ public class Inventory : MonoBehaviour {
 
 		if (Input.GetButtonDown("Inventory")) {
 			showInventory=!showInventory;
+			if(showInventory){
 
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().mouseLookLock();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().weaponLock();
+			}else{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().mouseLookUnlock();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().weaponUnlock();
+			}
 
 		}
 
