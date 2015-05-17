@@ -42,9 +42,9 @@ public class AmmoItem : MonoBehaviour {
 	{
 		audio.PlayOneShot(pickUpSound);
 		renderer.enabled = false;
-
+		
 		Inventory inventory=GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-		inventory.AddItem(new Item("M9 Ammo",1,"Amunicja do broni M9",Item.ItemType.Ammo,ammo));
+		inventory.AddItem(new Item("M9 Ammo",1,"Amunicja do broni M9",Item.ItemType.M9Ammo,ammo,weaponManager));
 
 		triggered = false;
 		Destroy(gameObject, pickUpSound.length);
