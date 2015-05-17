@@ -5,6 +5,7 @@ using System;
 public class gun : MonoBehaviour {
 
 	public Texture icon;
+	public String gunName;
 	public Transform Effect;
 	public Transform blood;
 	public Transform muzzle;

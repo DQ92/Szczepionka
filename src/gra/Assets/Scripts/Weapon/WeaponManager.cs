@@ -10,6 +10,8 @@ public class WeaponManager : MonoBehaviour {
 
 	gun selectedWeapon;
 
+	Dictionary<string, gun> dictionary = new Dictionary<string, gun>();
+
 	public bool weaponisActivated()
 	{
 		if(!selectedWeapon || !gameObject.activeSelf)
@@ -67,8 +69,22 @@ public class WeaponManager : MonoBehaviour {
 		weapon.transform.localEulerAngles = rotation;
 		weapon.SetActive(false);
 
+		gun g = weapon.GetComponent<gun>();
+		dictionary.Add(g.gunName,g);
+
 		maxWeapon = transform.childCount-1;
 		if(maxWeapon == 0)
 			SelectWeapon (0);
+	}
+
+	public bool addAmmo(string gunName,int v)
+	{
+		if(!dictionary.ContainsKey(gunName))
+			return false;
+
+
+		gun g = dictionary[gunName];
+		g.addAmmo(v);
+		return true;
 	}
 }
