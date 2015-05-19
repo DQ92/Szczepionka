@@ -25,13 +25,15 @@ public class Inventory : MonoBehaviour {
 	private int dragIndex;
 	private Rect inventoryRect;
 
+	private float showMessage;
+	private string message;
 
 	public CharacterController playerControl;
 
 	// Use this for initialization
 	void Start () {
 		showInventory = false;
-
+		showMessage = Time.time-2;
 		for (int i=0; i<(slotsX*slotsY); i++) {
 //			slots.Add(new Item());
 			inventory.Add(new Item());
@@ -49,7 +51,14 @@ public class Inventory : MonoBehaviour {
 
 		if (Input.GetButtonDown("Inventory")) {
 			showInventory=!showInventory;
+			if(showInventory){
 
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().mouseLookLock();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().weaponLock();
+			}else{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().mouseLookUnlock();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<LockUnlock>().weaponUnlock();
+			}
 
 		}
 
@@ -70,6 +79,10 @@ public class Inventory : MonoBehaviour {
 			GUI.DrawTexture(new Rect(Event.current.mousePosition.x,Event.current.mousePosition.y,50,50),draggedItem.itemIcon);
 		}
 
+		if (showMessage>Time.time) {
+			GUI.Label(new Rect(400,300,600,200), message);
+			//showMessage=!showMessage;
+		}
 
 	}
 
@@ -100,6 +113,11 @@ public class Inventory : MonoBehaviour {
 						if(e.button ==1 && e.type == EventType.mouseDown ){
 							if(inventory[i].use()==-1){
 								RemoveItem(i);
+								message="zjadles zbroje zwinio";
+								showMessage=Time.time+2;
+							}else{
+								message="nie zjesz swinio zbroi";
+								showMessage=Time.time+2;
 							}
 						}
 					}

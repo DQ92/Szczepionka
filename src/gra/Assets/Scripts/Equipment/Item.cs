@@ -11,19 +11,24 @@ public class Item  {
 
 	public ItemType itemType;
 
+	private WeaponManager weaponManager;
+
+
 	public enum ItemType {
 		Weapon,
 		VaccinePart,
-		Ammo,
+		M9Ammo,
+		M4Ammo,
 		Medic
 	}
 
-	public Item(string name, int ID, string description, ItemType type,int power){
+	public Item(string name, int ID, string description, ItemType type,int power,WeaponManager weaponManager=null){
 		itemName = name;
 		itemPower = power;
 		itemIcon = Resources.Load<Texture2D> ("Item Icons/"+ name);
 		itemDescription = description;
 		itemType = type;
+		this.weaponManager = weaponManager;
 	}
 	public Item(){
 
@@ -31,10 +36,16 @@ public class Item  {
 
 	public int use(){
 		if (itemType == ItemType.Medic) {
+			weaponManager.addAmmo("M9",50);
 
-			return-1;
+			return 1;
+		}
+		if (itemType == ItemType.M9Ammo) {
+			weaponManager.addAmmo("M9",50);
+			return 0;
 		}
 		return 0;
 	}
+
 
 }

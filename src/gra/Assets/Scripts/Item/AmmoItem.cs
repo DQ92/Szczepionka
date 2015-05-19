@@ -5,8 +5,8 @@ public class AmmoItem : MonoBehaviour {
 	public string itemName;
 	public AudioClip pickUpSound;
 	public int ammo = 32;
-	public string weaponPath;
-	protected Transform weapon;
+
+	public WeaponManager weaponManager;
 
 	protected bool triggered = false;
 	
@@ -27,22 +27,12 @@ public class AmmoItem : MonoBehaviour {
 	{
 		if (triggered)
 		{
-			if(weapon)
-				GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać "+itemName);
-			else
-				GUI.Label(new Rect(300,300,500,200), "Nie masz tej broni");
+			GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać "+itemName);
 		}
 	}
 
 	void Update()
 	{
-		if (!weapon) {
-			GameObject gObject = GameObject.Find (weaponPath);
-			if (!gObject)
-				return;
-				weapon = gObject.transform;
-		}
-
 		if (triggered && Input.GetKeyDown ("e")) {
 			pickUp();
 		}
@@ -50,11 +40,12 @@ public class AmmoItem : MonoBehaviour {
 
 	void pickUp()
 	{
-		//weapon.SendMessage ("addAmmo", ammo, SendMessageOptions.DontRequireReceiver);
 		audio.PlayOneShot(pickUpSound);
 		renderer.enabled = false;
-		gun colt = weapon.gameObject.GetComponent<gun>();
-		colt.addAmmo (ammo);
+		
+		Inventory inventory=GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+		inventory.AddItem(new Item("M9 Ammo",1,"Amunicja do broni M9",Item.ItemType.M9Ammo,ammo,weaponManager));
+
 		triggered = false;
 		Destroy(gameObject, pickUpSound.length);
 	}
