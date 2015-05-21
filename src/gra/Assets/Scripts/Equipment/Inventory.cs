@@ -41,10 +41,10 @@ public class Inventory : MonoBehaviour {
 
 		inventoryRect = new Rect (posX,posY,slotsX*boxSizeX,slotsY*boxSizeY);
 
-		AddItem (new Item ("1", 0, "lorem ipsum", Item.ItemType.Medic,5));
+		/*AddItem (new Item ("1", 0, "lorem ipsum", Item.ItemType.Medic,5));
 		AddItem (new Item ("1", 0, "lorem ipsum", Item.ItemType.Medic,40));
-		AddItem (new Item ("2", 0, "lorem ipsum", Item.ItemType.Medic,80));
-		print(InventoryContains ("2"));
+		AddItem (new Item ("2", 0, "lorem ipsum", Item.ItemType.Medic,80));*/
+
 	}
 
 	void Update(){
@@ -113,10 +113,10 @@ public class Inventory : MonoBehaviour {
 						if(e.button ==1 && e.type == EventType.mouseDown ){
 							if(inventory[i].use()==-1){
 								RemoveItem(i);
-								message="zjadles zbroje zwinio";
+								message="Przedmiotu użyłeś Ty hawk!";
 								showMessage=Time.time+2;
 							}else{
-								message="nie zjesz swinio zbroi";
+								message="Przedmiotu nie użyjesz Ty hawk!";
 								showMessage=Time.time+2;
 							}
 						}

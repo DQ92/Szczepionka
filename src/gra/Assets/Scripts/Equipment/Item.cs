@@ -36,13 +36,13 @@ public class Item  {
 
 	public int use(){
 		if (itemType == ItemType.Medic) {
-			weaponManager.addAmmo("M9",50);
+			//weaponManager.addAmmo("M9",50);
 
 			return 1;
 		}
 		if (itemType == ItemType.M9Ammo) {
 			weaponManager.addAmmo("M9",50);
-			return 0;
+			return -1;
 		}
 		return 0;
 	}
