@@ -19,7 +19,8 @@ public class Item  {
 		VaccinePart,
 		M9Ammo,
 		M4Ammo,
-		Medic
+		Medic,
+		Food
 	}
 
 	public Item(string name, int ID, string description, ItemType type,int power,WeaponManager weaponManager=null){
@@ -36,12 +37,24 @@ public class Item  {
 
 	public int use(){
 		if (itemType == ItemType.Medic) {
-			//weaponManager.addAmmo("M9",50);
+			if(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().addHealth(itemPower)){
+				return -1;
+			}
+			return 0;
 
-			return 1;
+
+		}
+		if (itemType == ItemType.Food) {
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Eating>().resetTimer();
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().addHealth(itemPower);
+			return -1;
 		}
 		if (itemType == ItemType.M9Ammo) {
 			weaponManager.addAmmo("M9",50);
+			return -1;
+		}
+		if (itemType == ItemType.M4Ammo) {
+			weaponManager.addAmmo("M4",50);
 			return -1;
 		}
 		return 0;
