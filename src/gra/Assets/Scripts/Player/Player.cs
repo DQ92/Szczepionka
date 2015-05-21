@@ -74,6 +74,16 @@ public class Player : MonoBehaviour {
 		
 	}
 
+	public bool addHealth(int value)
+	{
+		if(health < maxHealth){
+			health +=value;
+			if(health>maxHealth)
+				health = maxHealth;
+			return true;
+		}
+		return false;
+	}
 	public void ApplayDamage(int damage){
 
 		health -= damage;
