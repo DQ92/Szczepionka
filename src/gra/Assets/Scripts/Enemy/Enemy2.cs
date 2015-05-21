@@ -5,6 +5,7 @@ public class Enemy2 : MonoBehaviour {
 	public int health = 100;
 	public Transform [] waypoints;// między punktami nie może być przeszkód
 	public Transform target;
+	public LayerMask layerMask;
 
 	[Header("Sounds:")]
 	public AudioClip shot;
@@ -79,7 +80,10 @@ public class Enemy2 : MonoBehaviour {
 		if (Physics.Raycast (eyePosition.transform.position, dir, out hit, attackRange))
 		{
 			if(hit.transform.tag == "Player"){
-				startPoint = transform.position;
+				if(state != State.attack){
+					startTime = Time.time;
+					startPoint = transform.position;
+				}
 				return state = State.attack;
 			}
 		}
@@ -179,7 +183,7 @@ public class Enemy2 : MonoBehaviour {
 		audio.PlayOneShot(shot);
 		Instantiate(muzzle, rWeapon.position, Quaternion.LookRotation(dir));
 
-		if (Physics.Raycast (rWeapon.transform.position, dir, out hit, 100))
+		if (Physics.Raycast (rWeapon.transform.position, dir, out hit, 100,layerMask))
 		{
 			hit.transform.SendMessage("ApplayDamage",damage,SendMessageOptions.DontRequireReceiver);
 		}
@@ -193,7 +197,7 @@ public class Enemy2 : MonoBehaviour {
 		audio.PlayOneShot(shot);
 		Instantiate(muzzle, lWeapon.position, Quaternion.LookRotation(dir));
 
-		if (Physics.Raycast (lWeapon.transform.position, dir, out hit, 100))
+		if (Physics.Raycast (lWeapon.transform.position, dir, out hit, 100,layerMask))
 		{
 			hit.transform.SendMessage("ApplayDamage",damage,SendMessageOptions.DontRequireReceiver);
 		}
