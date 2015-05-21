@@ -4,7 +4,7 @@ using System.Collections;
 public class Kiwi : MonoBehaviour {
 	public string itemName;
 	public AudioClip pickUpSound;
-	public int ammo = 0;
+	public int ammo = 10;
 	
 	public WeaponManager weaponManager;
 	
@@ -44,7 +44,7 @@ public class Kiwi : MonoBehaviour {
 		renderer.enabled = false;
 		
 		Inventory inventory=GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-		inventory.AddItem(new Item("Kiwi",1,"Jedzenie",Item.ItemType.Medic,ammo,weaponManager));
+		inventory.AddItem(new Item("Kiwi",1,"Jedzenie",Item.ItemType.Food,ammo,weaponManager));
 		
 		triggered = false;
 		Destroy(gameObject, pickUpSound.length);
