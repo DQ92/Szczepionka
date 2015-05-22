@@ -18,6 +18,8 @@ ModelImporter:
     3300000: bridge
     3300002: Tube01
     4300002: Tube01
+    6400000: bridge
+    6400002: Tube01
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -40,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
