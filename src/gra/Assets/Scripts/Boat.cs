@@ -9,12 +9,8 @@ public class Boat : MonoBehaviour {
 	void OnTriggerEnter( Collider other) {
 		if (other.gameObject.tag == "Player") {
 			triggered = true;
-			print("wsiadł do łódki");
-			//inventory.
 			//TODO 
-
-			goToNextLevel();
-			print("wsiadł do łódki");
+		
 		}
 	}
 	
@@ -25,8 +21,5 @@ public class Boat : MonoBehaviour {
 		}
 	}
 
-	private void goToNextLevel(){
-		//TODO przeniesienie!
-	}
 
 }
