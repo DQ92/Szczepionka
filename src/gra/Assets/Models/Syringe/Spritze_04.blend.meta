@@ -1,0 +1,83 @@
+fileFormatVersion: 2
+guid: 6185a4e77dab93b49b8c4fd761176841
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Haltererung
+    100002: Kan_le
+    100004: Nadel
+    100006: Pressstab
+    100008: //RootNode
+    400000: Haltererung
+    400002: Kan_le
+    400004: Nadel
+    400006: Pressstab
+    400008: //RootNode
+    2300000: Haltererung
+    2300002: Kan_le
+    2300004: Nadel
+    2300006: Pressstab
+    3300000: Haltererung
+    3300002: Kan_le
+    3300004: Nadel
+    3300006: Pressstab
+    4300000: Haltererung
+    4300002: Kan_le
+    4300004: Nadel
+    4300006: Pressstab
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

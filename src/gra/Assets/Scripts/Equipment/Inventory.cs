@@ -41,9 +41,10 @@ public class Inventory : MonoBehaviour {
 
 		inventoryRect = new Rect (posX,posY,slotsX*boxSizeX,slotsY*boxSizeY);
 
-		/*AddItem (new Item ("1", 0, "lorem ipsum", Item.ItemType.Medic,5));
-		AddItem (new Item ("1", 0, "lorem ipsum", Item.ItemType.Medic,40));
-		AddItem (new Item ("2", 0, "lorem ipsum", Item.ItemType.Medic,80));*/
+		AddItem (new Item ("1", 10, "lorem ipsum", Item.ItemType.Medic,5));
+		AddItem (new Item ("1", 20, "lorem ipsum", Item.ItemType.Medic,40));
+		AddItem (new Item ("2", 50, "lorem ipsum", Item.ItemType.Medic,80));
+
 
 	}
 
@@ -170,6 +171,17 @@ public class Inventory : MonoBehaviour {
 		}
 		return false;
 	}
+
+	bool CountItem(string itemName){
+		int sum = 0;
+		for (int i=0; i<inventory.Count; i++) {
+			if(inventory[i].itemName==itemName){
+				sum++;
+			}
+		}
+		return sum;
+	}
+
 
 	void RemoveItem(string name){
 		for (int i =0; i<inventory.Count; i++) {
