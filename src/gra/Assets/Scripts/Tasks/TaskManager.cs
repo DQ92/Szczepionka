@@ -15,14 +15,14 @@ public class TaskManager: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		tasks.Add (new Task("findWeapon","Witam, jeśli czytasz \n" +
+		/*tasks.Add (new Task("findWeapon","Witam, jeśli czytasz \n" +
 			"tą wiadomość to masz \n" +
 		    "pecha zostałeś wybrany \n" +
 		    "przez los do uratowania\n" +
 		    "świata.\n" +
 		    "\n" +
 			"Znajdź broń m9"));
-		selectTask (0);
+		selectTask (0);*/
 		toggleVisiblity();
 	}
 	

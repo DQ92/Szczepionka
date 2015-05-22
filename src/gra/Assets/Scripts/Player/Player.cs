@@ -84,6 +84,7 @@ public class Player : MonoBehaviour {
 		}
 		return false;
 	}
+
 	public void ApplayDamage(int damage){
 
 		health -= damage;
