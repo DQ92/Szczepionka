@@ -172,7 +172,7 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
-	bool CountItem(string itemName){
+	public int CountItem(string itemName){
 		int sum = 0;
 		for (int i=0; i<inventory.Count; i++) {
 			if(inventory[i].itemName==itemName){
