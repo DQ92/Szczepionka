@@ -48,7 +48,7 @@ public class NextMission : MonoBehaviour {
 
 	void Update()
 	{
-		if(numberOfUncompletedTasks > 0)
+		if(!triggered || numberOfUncompletedTasks > 0)
 			return;
 
 		if(Input.GetKeyDown("e"))
