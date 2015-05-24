@@ -163,7 +163,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	bool InventoryContains(string itemName){
+	public bool InventoryContains(string itemName){
 		for (int i=0; i<inventory.Count; i++) {
 			if(inventory[i].itemName==itemName){
 				return true;
