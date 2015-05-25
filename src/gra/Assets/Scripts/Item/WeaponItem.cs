@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class WeaponItem : MonoBehaviour {
+	public string itemName;
 	public AudioClip pickUpSound;
 	public Vector3 rotation;
 	public string prefab;
@@ -32,7 +33,7 @@ public class WeaponItem : MonoBehaviour {
 	{
 		if (triggered)
 		{
-			GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać");
+			GUI.Label(new Rect(300,300,500,200), "Wciśnij E aby zabrać "+itemName);
 		}
 	}
 	
