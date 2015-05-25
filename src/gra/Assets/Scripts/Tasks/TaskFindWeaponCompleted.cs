@@ -8,7 +8,7 @@ public class TaskFindWeaponCompleted : MonoBehaviour {
 
 	void OnDestroy()
 	{
-		manager.markAsCompleted("findWeapon");
+		manager.markAsCompleted("endOfMission");
 		string message = "Sieć jest uszkodzona\n" +
 			"nie możesz się ze mną \n" +
 			"porozumieć, będę cię\n" +
@@ -18,7 +18,6 @@ public class TaskFindWeaponCompleted : MonoBehaviour {
 			"miasta.\n" +
 			"\n" +
 			"Ruszaj w drogę!";
-
-		manager.addTask("endOfMission",message);
+	
 	}
 }

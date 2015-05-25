@@ -41,9 +41,9 @@ public class Inventory : MonoBehaviour {
 
 		inventoryRect = new Rect (posX,posY,slotsX*boxSizeX,slotsY*boxSizeY);
 
-		AddItem (new Item ("1", 10, "lorem ipsum", Item.ItemType.Medic,5));
-		AddItem (new Item ("1", 20, "lorem ipsum", Item.ItemType.Medic,40));
-		AddItem (new Item ("2", 50, "lorem ipsum", Item.ItemType.Medic,80));
+		AddItem (new Item ("apteczka", 10, "użyta leczy\nSkład: wyciąg z kaloryfera Chuck'a Norris'a, panele podłogowe, majeranek(dla smaku), esencja z odchodów wróżek. Może zaiwerać śladowe ilości zakrętek po wodzie mineralnej.", Item.ItemType.Medic,5));
+		AddItem (new Item ("apteczka", 10, "użyta leczy\nSkład: wyciąg z kaloryfera Chuck'a Norris'a, panele podłogowe, majeranek(dla smaku), esencja z odchodów wróżek. Może zaiwerać śladowe ilości zakrętek po wodzie mineralnej.", Item.ItemType.Medic,5));
+		AddItem (new Item ("apteczka", 10, "użyta leczy\nSkład: wyciąg z kaloryfera Chuck'a Norris'a, panele podłogowe, majeranek(dla smaku), esencja z odchodów wróżek. Może zaiwerać śladowe ilości zakrętek po wodzie mineralnej.", Item.ItemType.Medic,5));
 
 
 	}
@@ -163,7 +163,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	bool InventoryContains(string itemName){
+	public bool InventoryContains(string itemName){
 		for (int i=0; i<inventory.Count; i++) {
 			if(inventory[i].itemName==itemName){
 				return true;
@@ -172,7 +172,7 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
-	bool CountItem(string itemName){
+	public int CountItem(string itemName){
 		int sum = 0;
 		for (int i=0; i<inventory.Count; i++) {
 			if(inventory[i].itemName==itemName){

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class NextMission : MonoBehaviour {
 	public TaskManager taskManager;
 	public string message;
+	public string nexLevelName;
 
 	bool triggered = false;
 	int numberOfUncompletedTasks;
@@ -43,5 +44,17 @@ public class NextMission : MonoBehaviour {
 			else
 				GUI.Label(new Rect(300,300,500,200), message);
 		}
+	}
+
+	void Update()
+	{
+		if(!triggered || numberOfUncompletedTasks > 0)
+			return;
+
+		if(Input.GetKeyDown("e"))
+		{
+			Application.LoadLevel(nexLevelName);
+		}
+
 	}
 }
