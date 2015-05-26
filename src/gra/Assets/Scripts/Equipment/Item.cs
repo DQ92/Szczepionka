@@ -50,12 +50,16 @@ public class Item  {
 			return -1;
 		}
 		if (itemType == ItemType.M9Ammo) {
-			weaponManager.addAmmo("M9",50);
-			return -1;
+			if(weaponManager.addAmmo("M9",20)){
+				return -1;
+			}
+			return 0;
 		}
 		if (itemType == ItemType.M4Ammo) {
-			weaponManager.addAmmo("M4",50);
-			return -1;
+			if(weaponManager.addAmmo("M4",50)){
+				return -1;
+			}
+			return 0;
 		}
 		return 0;
 	}

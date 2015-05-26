@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class VaccinePart : MonoBehaviour {
-	public string name;
+	public string vaccineName;
 	public string desc;
 	// Use this for initialization
 	void Start () {
@@ -11,7 +11,7 @@ public class VaccinePart : MonoBehaviour {
 	void OnTriggerEnter( Collider other) {
 		if (other.gameObject.tag == "Player" && name!="") {
 			
-			GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().AddItem(new Item(name,0,desc+"\nNiezbędna część szczepionki potrzebna do misji.",Item.ItemType.VaccinePart,5));
+			GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().AddItem(new Item(vaccineName,0,desc+"\nNiezbędna część szczepionki potrzebna do misji.",Item.ItemType.VaccinePart,5));
 			Destroy(gameObject,0);
 		}
 	}

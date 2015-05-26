@@ -5,12 +5,12 @@ using System.Collections;
 public class FindVaccinePartsComplete : MonoBehaviour {
 
 	public TaskManager manager;
-
+	public GameObject gameObject;
 
 	void OnDestroy()
 	{
 
-		bool strzykawka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("strzykawka");
+		bool strzykawka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>().InventoryContains ("strzykawka");
 		bool skrzynka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("skrzynka");
 		bool kamien=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("kamien");
 		bool butelka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("butelka");
