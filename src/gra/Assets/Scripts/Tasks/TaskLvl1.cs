@@ -7,15 +7,19 @@ public class TaskLvl1 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		string message = "Twoim zadaniem teraz\n"+
-			"będzie odnalezienie \n"+
-				"3 owoców kiwi, \n"+
-				"jak je już znajdziesz \n"+
-				"to przejdź przez most \n"+
-				"i znajdź broń. \n"+
-				"Potem idź do łódki. \n"+
-				"\n\n"+
-				"Powodzenia!\n";
+		string message= "Twoim zadaniem będzie\n"+
+						"odnalezienie 3 owoców\n"+
+						"kiwi. Musisz je jeść, by\n"+
+						"mieć energię. \n\n"+
+						"Celem jest dotarcie \n"+
+						"do łodzi, ale pamiętaj,\n"+
+						"że będziesz potrzebował\n"+
+						"broń. Znajdziesz ją\n"+
+						"w opuszczonym domku,\n"+
+						"do którego wiedzie\n"+
+						"droga tylko przez wiszący\n" +
+						"most...\n\n"+
+						"Powodzenia!\n";
 		manager.addTask("kiwiTask",message);
 	}
 }

@@ -6,10 +6,9 @@ public class Eating : MonoBehaviour {
 	public Player player;
 	private float time = 0.0f;
 	private bool triggered = false;
-
 	private float timeMax = 30.0f;
 	private int addHealth = 25;
-	private int demageHealth = 5;
+	private int demageHealth = 8;
 
 
 	// Update is called once per frame
@@ -33,12 +32,6 @@ public class Eating : MonoBehaviour {
 
 	}
 
-	void OnGUI()
-	{
-		if (triggered)
-		{
-			//GUI.Label(new Rect(650,500,500,200), "Zjedz coś ");
-		}
-	}
+
 
 }

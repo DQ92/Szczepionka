@@ -15,6 +15,13 @@ public class TaskKiwiCompleted : MonoBehaviour {
 		if(count>=3){
 			taskManager.markAsCompleted("kiwiTask");
 		}
+		if ( Input.GetKey(KeyCode.LeftControl) ) {
+
+			if (Input.GetKeyDown ("k")){
+				count = 3;
+				print ("Już masz 3 kiwi!");
+			}
+		}
 	}
 
 }
