@@ -93,19 +93,23 @@ public class gun : MonoBehaviour {
 		
 	}
 	
-	public void addAmmo(int v){
+	public bool addAmmo(int v){
+		if(ammo == maxAmmo)
+			return false;
+
 		if (v <= magazineSize) {
 			inMagazine = v;
 			ammo = 0;
 			
 		}else{
 			inMagazine = magazineSize;
-			ammo = v - inMagazine;
+			ammo += v - inMagazine;
 			
 			if (ammo > maxAmmo)
 				ammo = maxAmmo;
 		}
 		numberOfMagazines = (int)Math.Ceiling((float)ammo/magazineSize);
+		return true;
 	}
 	
 	public int getNumberOfMagazines()

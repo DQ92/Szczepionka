@@ -84,7 +84,6 @@ public class WeaponManager : MonoBehaviour {
 
 
 		gun g = dictionary[gunName];
-		g.addAmmo(v);
-		return true;
+		return g.addAmmo(v);
 	}
 }
