@@ -5,6 +5,8 @@ public class Kiwi : MonoBehaviour {
 	public string itemName;
 	public AudioClip pickUpSound;
 	public int ammo = 10;
+
+	public TaskKiwiCompleted taskKiwiCompleted;
 	
 	public WeaponManager weaponManager;
 	
@@ -48,5 +50,7 @@ public class Kiwi : MonoBehaviour {
 		
 		triggered = false;
 		Destroy(gameObject, pickUpSound.length);
+
+		taskKiwiCompleted.add();
 	}
 }
