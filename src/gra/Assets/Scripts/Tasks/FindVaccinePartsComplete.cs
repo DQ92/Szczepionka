@@ -7,13 +7,23 @@ public class FindVaccinePartsComplete : MonoBehaviour {
 	public TaskManager manager;
 	public GameObject gameObject;
 
+	private Inventory inventory;
+	void Start(){
+		inventory=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
+
+	}
+
+
+
+
 	void OnDestroy()
 	{
 
-		bool strzykawka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>().InventoryContains ("strzykawka");
-		bool skrzynka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("skrzynka");
-		bool kamien=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("kamien");
-		bool butelka=GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory> ().InventoryContains ("butelka");
+
+		bool strzykawka=inventory.InventoryContains ("strzykawka");
+		bool skrzynka=inventory.InventoryContains ("skrzynka");
+		bool kamien=inventory.InventoryContains ("kamien");
+		bool butelka=inventory.InventoryContains ("butelka");
 		if (strzykawka && skrzynka && kamien && butelka) {
 			manager.markAsCompleted("findVaccineParts");
 			string message = 

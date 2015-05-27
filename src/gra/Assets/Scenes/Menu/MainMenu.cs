@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour {
 		                        Screen.height - buttonHeight - 250, buttonWidth, buttonHeight),
 		               			"Nowa Gra",buttonStyle))
 		{
-			Application.LoadLevel("TestLevel");
+			Application.LoadLevel("Level1");
 		}
 
 		if (GUI.Button(new Rect(Screen.width - buttonWidth - xPos ,
