@@ -76,6 +76,10 @@ public class Player : MonoBehaviour {
 
 	public bool addHealth(int value)
 	{
+		if (isDead) {
+				return false;
+		}
+
 		if(health < maxHealth){
 			health +=value;
 			if(health>maxHealth)
@@ -120,12 +124,21 @@ public class Player : MonoBehaviour {
 
 		if (GUI.Button(new Rect(x, y+20, 200, 30),"MENU"))
 		{
+			//GUI.Window(0, new Rect(x-75, 20, 350, 110), window, "Czy na pewno chcesz przerwać misje?");
 			Application.LoadLevel("MainMenu");
 		}
 
 		//GUI.Label(new Rect(300,300,500,200), "Kliknij aby spróbować jeszcze raz");
+		//GUI.Window(0, new Rect(x-75, 20, 350, 110), window, "Czy na pewno chcesz przerwać misje?");
 	}
 
+	void window(int windowID)
+	{
+		if (GUI.Button (new Rect (10, 50, 150, 30), "NIE"));
+			print ("nie");
+		if (GUI.Button (new Rect (170, 50, 150, 30), "TAK"));
+			print ("tak");
+	}
 	void Die()
 	{
 		isDead = true;
