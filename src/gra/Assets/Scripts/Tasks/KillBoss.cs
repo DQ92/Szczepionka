@@ -10,9 +10,14 @@ public class KillBoss: MonoBehaviour {
 
 	void Start () {
 
-		string message = "Zabij Bossa\n" +
-			"\n" +
-				"Powodzenia leszczu!";
+		string message = 
+						"Zabij Zoombie Matkę,\n" +
+						"jest to źródło zarazy\n" +
+						"śmierć tej kreatury\n" +
+						"powstrzyma ekspansję \n" +
+						"zoombie\n" +
+						"\n" +
+						"Powodzenia żołnierzu!";
 		manager.addTask("zabijBossa",message);
 	}
 }

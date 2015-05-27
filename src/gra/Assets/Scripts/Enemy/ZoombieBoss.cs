@@ -81,8 +81,11 @@ public class ZoombieBoss : MonoBehaviour {
 
 		manager.markAsCompleted("zabijBossa");
 		string message = 
-			"udaj się do punktu\n" +
-				" zbiórki \n";
+				"Udało Ci się!!\n\n\n" +
+				"Teraz odszukaj palmę,\n" +
+				"tam wykop grób i spocznij\n" +
+				"misja Twa\n dobiegła końca żołnierzu.\n\nSpoczywaj w pokoju.";
+		
 		
 		manager.addTask("endOfMission",message);
 	}

@@ -8,8 +8,11 @@ public class lvl4Win : MonoBehaviour {
 	{
 		manager.markAsCompleted("zabijBossa");
 		string message = 
-			"udaj się do punktu\n" +
-						" zbiórki \n";
+						"Udało Ci się!!\n\n\n" +
+						"Teraz odszukaj palmę,\n" +
+						"tam wykop grób i spocznij\n" +
+						"Twa misja dobiegła końca żołnierzu.";
+
 		
 		manager.addTask("endOfMission",message);
 
