@@ -48,7 +48,7 @@ public class gun : MonoBehaviour {
 		DrawWeapon();
 		transform.localPosition = hipPose;
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-		addAmmo (ammo);
+		reloadAmmo (ammo);
 		weaponManager = gameObject.GetComponentInParent<WeaponManager>();
 	}
 
@@ -97,17 +97,9 @@ public class gun : MonoBehaviour {
 		if(ammo == maxAmmo)
 			return false;
 
-		if (v <= magazineSize) {
-			inMagazine = v;
-			ammo = 0;
-			
-		}else{
-			inMagazine = magazineSize;
-			ammo += v - inMagazine;
-			
-			if (ammo > maxAmmo)
-				ammo = maxAmmo;
-		}
+		ammo += v;
+		if (ammo > maxAmmo)
+			ammo = maxAmmo;
 		numberOfMagazines = (int)Math.Ceiling((float)ammo/magazineSize);
 		return true;
 	}
@@ -156,6 +148,21 @@ public class gun : MonoBehaviour {
 
 	}
 
+	private void reloadAmmo(int v)
+	{
+		if (v <= magazineSize) {
+			inMagazine = v;
+			ammo = 0;
+			
+		}else{
+			inMagazine = magazineSize;
+			ammo = v - inMagazine;
+			
+			if (ammo > maxAmmo)
+				ammo = maxAmmo;
+		}
+		numberOfMagazines = (int)Math.Ceiling((float)ammo/magazineSize);
+	}
 	public IEnumerator DrawWeapon ()
 	{
 		if(drawWeapon)
@@ -178,7 +185,7 @@ public class gun : MonoBehaviour {
 		audio.PlayOneShot(reload);
 		yield return new WaitForSeconds(reloadTime);
 
-		addAmmo (ammo);
+		reloadAmmo (ammo);
 		yield return new WaitForSeconds(0.0f);
 		reloading = false;
 	}
