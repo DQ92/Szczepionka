@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
 
 public class NextMission : MonoBehaviour {
 	public TaskManager taskManager;
@@ -8,7 +9,7 @@ public class NextMission : MonoBehaviour {
 
 	bool triggered = false;
 	int numberOfUncompletedTasks;
-
+	
 	void OnTriggerEnter( Collider other) {
 		if (other.gameObject.tag == "Player") {
 			triggered = true;
@@ -54,6 +55,10 @@ public class NextMission : MonoBehaviour {
 		if(Input.GetKeyDown("e"))
 		{
 			Application.LoadLevel(nexLevelName);
+
+			StreamWriter file = new StreamWriter("data.dat");
+			file.WriteLine(nexLevelName);
+			file.Close ();
 		}
 
 	}

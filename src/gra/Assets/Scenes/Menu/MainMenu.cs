@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class MainMenu : MonoBehaviour {
 	public GUITexture background;
@@ -37,7 +38,13 @@ public class MainMenu : MonoBehaviour {
 		                        Screen.height - buttonHeight - 200, buttonWidth, buttonHeight),
 		               "Wznów",buttonStyle))
 		{
-
+			if (File.Exists("data.dat"))
+			{
+				StreamReader inp_stm = new StreamReader("data.dat");
+				string inp_ln = inp_stm.ReadLine( );
+				Application.LoadLevel(inp_ln);
+				inp_stm.Close( );
+			}
 		}
 
 		if (GUI.Button(new Rect(Screen.width - buttonWidth - xPos ,
